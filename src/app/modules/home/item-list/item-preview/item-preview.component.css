@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    border: 1px solid #222;
+}
+.image-container{
+    border:1px solid #222;
+}
+img{
+    width:100%;
+}
+h2{
+    text-align: center;
+    margin:10px 0px;
+}

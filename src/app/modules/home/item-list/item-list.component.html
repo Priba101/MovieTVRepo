@@ -1,0 +1,13 @@
+<br>
+<input type="text" placeholder="Search..">
+<br><br>
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
+</div>
+<section *ngIf="!isLoading" class="grid-container">
+    <div *ngFor="let c of content" >
+        <div>
+            <app-item-preview [routerLink]="['/content/',  c.id]" [singleItem]=c ></app-item-preview>
+        </div>
+    </div>
+</section>
