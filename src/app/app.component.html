@@ -1,10 +1,7 @@
 <app-header></app-header>
 <main>
-    <div>
-        <button routerLink="/movies" routerLinkActive="active-tab"  style="margin-right: 10px;"> Movies </button>
-        <button routerLink="/" routerLinkActive="active-tab" [routerLinkActiveOptions]="{exact: true}"> TV Shows </button>
+    <div class="container">
+        <router-outlet></router-outlet>
     </div>
-
-    <router-outlet></router-outlet> 
 </main>
 <app-footer></app-footer>

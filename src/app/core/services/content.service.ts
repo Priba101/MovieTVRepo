@@ -36,4 +36,29 @@ export class ContentService {
       this.contentUpdated.next([...this.content]);
     });
   }
+  private searchQry;
+
+  searchContent(type:string, qry: string){
+    this.searchQry = qry;
+
+    this.queryParam = '/search/' + type+ '/' + environment.apiKey + '&query=' + qry;
+    console.log(BACKEND_URL + this.queryParam);
+
+    this.http.get<{response: any}>(BACKEND_URL + this.queryParam)
+    .pipe(map((contentData:any) => {
+      return contentData.results.slice(0, 10).map(movie => {
+        return {
+          id: movie.id,
+          title: movie.title || movie.name,
+          overview: movie.overview,
+          posterUrl: "http://image.tmdb.org/t/p/w342" + movie.poster_path,
+          videoUrl: movie.video,
+        };
+      });
+    }))
+    .subscribe((transformedContent) => {
+      this.content = transformedContent;
+      this.contentUpdated.next([...this.content]);
+    });
+  }
 }

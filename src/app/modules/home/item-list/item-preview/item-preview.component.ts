@@ -1,4 +1,4 @@
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+import { Content } from 'src/app/shared/models/content.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

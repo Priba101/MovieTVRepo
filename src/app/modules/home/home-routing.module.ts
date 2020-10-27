@@ -7,7 +7,8 @@ import { ItemComponent } from './item/item.component';
 const routes: Routes = [
   { path: '', component: ItemListComponent, data : {type : 'tv'}},
   { path: 'movies', component: ItemListComponent, data : {type : 'movie'}},
-  { path: 'content/:id', component: ItemComponent}
+  { path: 'movie/:id', component: ItemComponent, data: {type : 'movie'}},
+  { path: 'tv/:id', component:ItemComponent, data: {type : 'tv'}}
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

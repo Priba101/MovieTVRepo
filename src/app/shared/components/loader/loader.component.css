@@ -1,0 +1,16 @@
+.loader{
+    pointer-events: none;
+    width: 2em;
+    height: 2em;
+    border: 0.4em solid transparent;
+    border-color: #eee;
+    border-top-color: #222;
+    border-radius: 50%;
+    animation: loadingspin 1s linear infinite;
+    margin: 0 auto;
+}
+@keyframes loadingspin{
+    100%{
+        transform:rotate(360deg)
+    }
+}
