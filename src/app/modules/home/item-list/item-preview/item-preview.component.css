@@ -1,14 +1,26 @@
 :host {
     display: block;
-    border: 1px solid #222;
-}
+    box-shadow: 0 0px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #fff;
+    }
+:host:hover{
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
 .image-container{
-    border:1px solid #222;
+    height: 324px;
 }
 img{
     width:100%;
+    object-fit: cover;
+    max-height: 324px;
+    border-radius: 3px 3px 0px 0px;
 }
-h2{
+h3{
+    font-weight: 600;
     text-align: center;
-    margin:10px 0px;
+    line-height: 3;
+    color:#222;
 }

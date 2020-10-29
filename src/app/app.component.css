@@ -2,7 +2,3 @@ main {
     padding: 5% 10%;
     min-height: calc(100vh - 160px);
 }
-.active-tab{
-    background-color: #222;
-    color:#fff;
-}

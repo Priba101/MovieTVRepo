@@ -1,12 +1,10 @@
-input[type="text"]{
-    width:100%;
-    padding:10px;
-    border-radius:25px;
-    border: 1px solid #ddd;
-}
 .grid-container {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-  }
+}
+.active-tab{
+    background-color: #222;
+    color: #fff;
+}

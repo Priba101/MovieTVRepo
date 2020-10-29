@@ -4,19 +4,25 @@ import { environment } from 'src/environments/environment';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 const BACKEND_URL = environment.apiUrl;
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContentService {
+
   private content: Content[] = [];
   private contentUpdated =  new Subject<Content[]>();
   private queryParam;
-  //environment.apiKey
+ 
   constructor(private http: HttpClient) { }
+
   getContentUpdateLstener() {
     return this.contentUpdated.asObservable();
   }
+
   getTop10(type: string){
     this.queryParam = '/' + type + '/top_rated' + environment.apiKey;
     this.http.get<{movies: any}>(BACKEND_URL + this.queryParam)
@@ -36,6 +42,7 @@ export class ContentService {
       this.contentUpdated.next([...this.content]);
     });
   }
+
   private searchQry;
 
   searchContent(type:string, qry: string){
@@ -60,5 +67,11 @@ export class ContentService {
       this.content = transformedContent;
       this.contentUpdated.next([...this.content]);
     });
+  }
+  getById(id: string, type: string) {
+    this.queryParam = '/' + type+ '/' + id + environment.apiKey;
+    return this.http.get<{content: any}>(
+      BACKEND_URL + this.queryParam
+    );
   }
 }

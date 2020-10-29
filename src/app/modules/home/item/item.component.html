@@ -1,1 +1,13 @@
-<p>item works!</p>
+<div>
+    <button routerLinkActive="active-tab"  style="margin-right: 10px;" (click)="goBack()"> &#8592; Back </button>
+</div>
+<br>
+<div class="grid-container">
+    <div class="image-container">
+        <img [src]="content?.posterUrl" alt="">
+    </div>
+    <div>
+        <h2>{{content?.title}}</h2>
+        <p>{{content?.overview}}</p>
+    </div>
+</div>
