@@ -9,6 +9,7 @@
     animation: loadingspin 1s linear infinite;
     margin: 0 auto;
 }
+
 @keyframes loadingspin{
     100%{
         transform:rotate(360deg)

@@ -1,0 +1,17 @@
+div{
+    margin: 0 auto;
+    width:100%;
+    text-align: center;
+} svg{
+    width:30%;
+    height: auto;
+} h2{
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+    svg{
+        width:100%;
+        height: auto;
+    }
+}

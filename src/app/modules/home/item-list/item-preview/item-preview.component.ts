@@ -1,5 +1,6 @@
-import { Content } from 'src/app/shared/models/content.model';
 import { Component, Input, OnInit } from '@angular/core';
+
+import { MovieTV } from 'src/app/shared/models/movietv.model';
 
 @Component({
   selector: 'app-item-preview',
@@ -7,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./item-preview.component.css']
 })
 export class ItemPreviewComponent implements OnInit {
-  @Input() public singleItem: Content;
+  @Input() public singleItem: MovieTV;
+
   constructor() { }
 
   ngOnInit(): void {

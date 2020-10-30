@@ -3,9 +3,19 @@
 </div>
 <br>
 <div class="grid-container">
-    <div class="image-container">
-        <img [src]="content?.posterUrl" alt="">
+    <div *ngIf="!content?.hasVideo">
+        <div class="image-container">
+            <img [src]="content?.imageUrl" [alt]="content?.title">
+        </div>
     </div>
+
+    <div *ngIf="content?.hasVideo">
+        <div class="image-container">
+            <iframe width="100%" height="500" [src]="content?.videoUrl" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    
     <div>
         <h2>{{content?.title}}</h2>
         <p>{{content?.overview}}</p>

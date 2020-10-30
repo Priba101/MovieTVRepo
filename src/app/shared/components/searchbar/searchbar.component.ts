@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+
 import { ContentService } from 'src/app/core/services/content.service';
 
 @Component({
@@ -15,16 +15,24 @@ export class SearchbarComponent implements OnInit {
   constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
+    this.contentService.srcTerm.subscribe(term => {
+      this.searchTerm = term;
+    })
+    this.onSearch();
   }
 
   onSearchUpdate(event: any) {
+    this.contentService.updatedSearchEntry(event.target.value);
     setTimeout(() => {
-      this.searchTerm = event.target.value;
+    this.onSearch();
+  }, 1000);
+  }
+
+  private onSearch(){
       if(this.searchTerm.length >= 3) {
         this.contentService.searchContent(this.contentType, this.searchTerm);
       } else {
         this.contentService.getTop10(this.contentType);
       }
-    }, 1000);
   }
 }

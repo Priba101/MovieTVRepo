@@ -1,10 +1,3 @@
 .grid-container {
-    display: grid;
     grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-}
-.active-tab{
-    background-color: #222;
-    color: #fff;
 }

@@ -3,32 +3,72 @@
     padding: 0px;
 }
 
-body{
+html, body{
     background-color: white;
     font-family: 'Poppins','sans-serif';
+    overflow-x: hidden;
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .container{
     width: 70%;
     margin: 0 auto;
 }
+
+.grid-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+}
+
 button{
     padding:12px;
     min-width: 80px;
-    background-color: turquoise;
-    border:0px;
+    cursor: pointer;
+    border:none;
+    border-radius: 3px;
+    background-color: #fff;
+    color:#222;
     font-weight: bold;
     transition: .2s ease;
-    border-radius: 25px;
-    border-radius: 3px;
     box-shadow: 0 0px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+} 
+
 button:hover{
-    padding:12px;
-    min-width: 80px;
-    background-color: #222;
-    cursor: pointer;
-    border:0px;
-    font-weight: bold;
+    background-color: teal;
     color:#fff;
+} 
+
+button:focus{
+    outline: none;
+    border: none;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color:#222;
+    cursor: pointer;
+} 
+
+a:active, .active-tab{
+    background-color: teal;
+    color:#fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .container{
+        width: 80%;
+    }
+
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
 }

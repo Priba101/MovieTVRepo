@@ -1,9 +1,9 @@
-import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ContentService } from 'src/app/core/services/content.service';
 
+import { ContentService } from 'src/app/core/services/content.service';
 import { Subscription } from 'rxjs';
+import { MovieTV } from 'src/app/shared/models/movietv.model';
 
 @Component({
   selector: 'app-item-list',
@@ -12,9 +12,9 @@ import { Subscription } from 'rxjs';
 })
 export class ItemListComponent implements OnInit, OnDestroy {
 
-  public isLoading = false;
+  public isLoading = true;
   public contentType;
-  public content: Content[] = [];
+  public content: MovieTV[] = [];
   private contentSub: Subscription;
 
   public constructor(
@@ -22,16 +22,18 @@ export class ItemListComponent implements OnInit, OnDestroy {
     private route:ActivatedRoute,
     private router:Router) {
       this.contentType = route.snapshot.data['type'];
-      console.log(this.contentType);
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      if(this.content != null){
+        this.isLoading = false;
+      }
+    }, 400);
     this.contentService.getTop10(this.contentType);
-    this.isLoading = true;
     this.contentSub = this.contentService.getContentUpdateLstener()
-    .subscribe( (contet: Content[]) => {
-      this.content = contet;
-      this.isLoading = false;
+    .subscribe( (content: MovieTV[]) => {
+      this.content = content;
     });
   }
 

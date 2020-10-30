@@ -2,14 +2,22 @@
     <button routerLink="/movies" routerLinkActive="active-tab"  style="margin-right: 10px;"> Movies </button>
     <button routerLink="/" routerLinkActive="active-tab" [routerLinkActiveOptions]="{exact: true}"> TV Shows </button>
 </div>
+
 <app-searchbar [contentType]=contentType></app-searchbar>
+
 <div *ngIf="isLoading">
     <app-loader></app-loader>
 </div>
+
 <section *ngIf="!isLoading" class="grid-container">
-    <div *ngFor="let c of content" >
+    <div *ngFor="let c of content">
         <div>
-            <app-item-preview [routerLink]="['/' + type + '/',  c.id]" [singleItem]=c ></app-item-preview>
+            <app-item-preview [routerLink]="['/' + contentType + '/',  c.id]" [singleItem]=c ></app-item-preview>
         </div>
     </div>
 </section>
+
+<div *ngIf="content.length <=0 && !isLoading">
+    <br>
+    <app-notfound></app-notfound>
+</div>
