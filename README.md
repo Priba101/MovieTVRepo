@@ -5,8 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # How to start the application
 
 1. Navigate to the folder where the project is saved using the command prompt
-2. Enter npm install to install all that is required
-3. Enter ng serve to run the app 
+2. Enter `npm install` to install all dependencies
+3. Enter `ng serve` to run the app 
+4. Open a browser and navigate to `http://localhost:4200/`
+
+*Important Notice* Internet connection is required to run the app
 
 ## Development server
 
