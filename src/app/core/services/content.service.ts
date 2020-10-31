@@ -58,7 +58,6 @@ export class ContentService {
 
   getTrailerById(id: string, type:string){
     this.queryParam = '/' + type + '/' + id + '/videos' + environment.apiKey;
-    console.log("TRAILER ID", BACKEND_URL + this.queryParam)
     return this.http.get<{response: any}>(
       BACKEND_URL + this.queryParam
     );

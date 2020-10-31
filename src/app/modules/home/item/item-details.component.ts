@@ -8,8 +8,8 @@ import { MovieTV } from 'src/app/shared/models/movietv.model';
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  templateUrl: './item-details.component.html',
+  styleUrls: ['./item-details.component.css']
 })
 
 export class ItemComponent implements OnInit {

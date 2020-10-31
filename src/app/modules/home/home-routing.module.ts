@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NotfoundComponent } from 'src/app/shared/components/notfound/notfound.component';
 import { ItemListComponent } from './item-list/item-list.component';
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './item/item-details.component';
 
 const routes: Routes = [
   { path: '', component: ItemListComponent, data : {type : 'tv', animation:'TVPage' }},

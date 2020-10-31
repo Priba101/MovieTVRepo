@@ -10,6 +10,6 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
   imports: [
     CommonModule
   ],
-  exports: [LoaderComponent,SearchbarComponent, SearchbarComponent]
+  exports: [LoaderComponent,SearchbarComponent, NotfoundComponent]
 })
 export class SharedModule { }

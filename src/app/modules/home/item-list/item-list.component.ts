@@ -25,15 +25,11 @@ export class ItemListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      if(this.content != null){
-        this.isLoading = false;
-      }
-    }, 400);
     this.contentService.getTop10(this.contentType);
     this.contentSub = this.contentService.getContentUpdateLstener()
     .subscribe( (content: MovieTV[]) => {
       this.content = content;
+      this.isLoading=false;
     });
   }
 
